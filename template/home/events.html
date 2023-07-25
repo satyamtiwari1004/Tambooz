@@ -1,0 +1,38 @@
+{% extends 'index.html' %}
+{% block title %}Events | Tambooz - The Camping Tribe
+{% endblock  %}
+{% load static %}
+{% block csslink %}
+<link rel="stylesheet" href="{% static 'css/events.css' %}">
+{% endblock %}
+{% block body %}
+
+
+<div class="calendar-container">
+    <div class="calendar-header">
+      <h1>
+         March
+        <button>▾</button>
+      </h1>
+      <p>2023</p>
+    </div>
+    <div class="calendar"><span class="day-name">Mon</span><span class="day-name">Tue</span><span class="day-name">Wed</span><span class="day-name">Thu</span><span class="day-name">Fri</span><span class="day-name">Sat</span><span class="day-name">Sun</span>
+      
+      <div class="day-name day--disabled">30</div>
+      <div class="day-name day--disabled">31</div>
+
+      {% for i in daysno%}
+      <div class="day-name" style=" border-bottom: 1px solid rgba(166, 168, 179, 0.12);
+      border-right: 1px solid rgba(166, 168, 179, 0.12);color: #98a0a6;">
+      {% if i in campDays%}<span class="font-bold">{{campDays.title}}</span> {%else%}{{i}} 
+      {%endif%}</div>
+      
+      {%endfor%}
+
+      <div class="day-name day--disabled">1</div>
+      <div class="day-name day--disabled">2</div>
+      
+    </div>
+  </div>
+
+{% endblock  %}

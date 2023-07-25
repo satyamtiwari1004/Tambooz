@@ -1,0 +1,31 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block title %}Gallery | Tambooz - The Camping Tribe
+{% endblock  %}
+
+{% block body %}
+
+<section class="bg-white">
+    <div class="container px-6 py-10 mx-auto">
+        <h1 class="text-2xl font-semibold text-center text-gray-800 capitalize lg:text-3xl">Memories from our camping
+        </h1>
+
+        <p class="mt-4 text-center text-gray-500">
+            
+        </p>
+
+
+        <div class="grid grid-cols-1 gap-8 mt-8 xl:mt-12 xl:gap-12 md:grid-cols-2 xl:grid-cols-3">
+            {% for gallery in galleryObject%}
+            <div>
+                <img class="object-cover w-full rounded-lg h-96 "
+                    src="{{gallery.thumbnail.url}}"
+                    alt="">
+               
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>  
+
+{% endblock  %}
